@@ -1,0 +1,13 @@
+Sub FindReplace()
+	Dim Rng As Range
+	Dim WorkRng As Range
+	On Error Resume Next
+	xTitleId = "findvaluegreaterthan"
+	Set WorkRng = Application.Selection
+	Set WorkRng = Application.InputBox("Range", xTitleId, WorkRng.Address, Type:=8)
+	For Each Rng In WorkRng
+		If Rng.Value < 200 Then
+			Rng.Value = 0
+		End If
+	Next
+End Sub
